@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140411010747) do
+ActiveRecord::Schema.define(version: 20140411013106) do
 
   create_table "properties", force: true do |t|
     t.string   "name"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20140411010747) do
     t.integer  "property_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "available",        default: true
   end
 
   add_index "units", ["property_id"], name: "index_units_on_property_id"
