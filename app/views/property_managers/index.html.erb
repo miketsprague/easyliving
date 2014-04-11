@@ -1,0 +1,29 @@
+<h1>Listing property_managers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @property_managers.each do |property_manager| %>
+      <tr>
+        <td><%= property_manager.name %></td>
+        <td><%= property_manager.description %></td>
+        <td><%= link_to 'Show', property_manager %></td>
+        <td><%= link_to 'Edit', edit_property_manager_path(property_manager) %></td>
+        <td><%= link_to 'Destroy', property_manager, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Property manager', new_property_manager_path %>

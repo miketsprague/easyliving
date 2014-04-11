@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number: MyString
+  type: 
+  rent: MyString
+  date_available: 2014-04-10
+  description: MyString
+  security_deposit: MyString
+  property_id: 
+
+two:
+  number: MyString
+  type: 
+  rent: MyString
+  date_available: 2014-04-10
+  description: MyString
+  security_deposit: MyString
+  property_id: 
