@@ -1,29 +1,29 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Property -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @property.name %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @property.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>
+  <dd><%= @property.address %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:property_type) %>:</strong></dt>
+  <dd><%= @property.property_type %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @property.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:property_manager_id) %>:</strong></dt>
+  <dd><%= @property.property_manager_id %></dd>
+</dl>
 
-<p>
-  <strong>Address:</strong>
-  <%= @property.address %>
-</p>
-
-<p>
-  <strong>Type:</strong>
-  <%= @property.property_type %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @property.description %>
-</p>
-
-<p>
-  <strong>Property manager:</strong>
-  <%= @property.property_manager %>
-</p>
-
-<%= link_to 'Edit', edit_property_path(@property) %> |
-<%= link_to 'Back', properties_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              properties_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_property_path(@property), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              property_path(@property),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
