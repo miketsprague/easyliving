@@ -1,14 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>IvPoc</title>
+  <title>Find IV Housing</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+
   <%= csrf_meta_tags %>
 </head>
 <body>
+    <!-- Navbar ================================================== -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="./index.html">Find IV Housing</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active">
+                <%= link_to "List View", root_path %>
+              </li>
+              <li class="">
+                <%= link_to "Map View", properties_path %>
+              </li>
 
-<%= yield %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <div class="container">
+      <div class="row">
+      <div class="messages span9">
+        <%= bootstrap_flash %>
+      </div>
+      </div>
+      <div class="row">
+        <%= render_breadcrumbs %>
+        <%= yield %>
+      </div>
+    </div>
+
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 </body>
 </html>
