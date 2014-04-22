@@ -5,7 +5,10 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag "gmaps4rails" %>
+
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 
   <%= csrf_meta_tags %>
 </head>
@@ -43,10 +46,10 @@
       </div>
       <div class="row">
         <%= render_breadcrumbs %>
-        <%= yield %>
+         <%= yield %>
+         <%= yield :scripts %> 
       </div>
     </div>
 
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 </body>
 </html>
