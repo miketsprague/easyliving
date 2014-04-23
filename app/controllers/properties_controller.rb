@@ -5,6 +5,7 @@ class PropertiesController < ApplicationController
   # GET /properties.json
   def index
     @properties = Property.all
+    @units = Unit.all
     @json = @properties.to_gmaps4rails
   end
 

@@ -1,30 +1,38 @@
 <%- model_class = Property -%>
 
+<!-- For now, we're going to include unit listing here, not just properties.  This really should be done on the units page in the future, but that would render this page irrelevant.  Plus im in a bit of a hurry -->
+
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:name) %></th>
+   <!--   <th><%= model_class.human_attribute_name(:name) %></th> -->
       <th><%= model_class.human_attribute_name(:address) %></th>
       <th><%= model_class.human_attribute_name(:property_type) %></th>
-      <th><%= model_class.human_attribute_name(:description) %></th>
-      <th><%= model_class.human_attribute_name(:property_manager_id) %></th>
+      <th>Beds/Baths</th>
+      <th><%= Unit.human_attribute_name(:rent)  %></th>
+<!--      <th><%= model_class.human_attribute_name(:description) %></th> -->
+      <th>Landlord</th>
 <!--      <th><%= model_class.human_attribute_name(:created_at) %></th> -->
 <!--      <th><%=t '.actions', :default => t("helpers.actions") %></th> -->
+      <th>Lease Available For 2014-2015?</th> <!-- Hahahahaha dont do this in the future -->
     </tr>
   </thead>
   <tbody>
-    <% @properties.each do |property| %>
+    <% @units.each do |unit| 
+     property = unit.property
+     leasing_now = unit.date_available.year == 2014 %>
       <tr>
-        <td><%= link_to property.id, property_path(property) %></td>
-        <td><%= property.name %></td>
-        <td><%= property.address %></td>
+        <!-- <td><%= property.name %></td> -->
+        <td><%= link_to property.address, property_path(property) %></td>
         <td><%= property.property_type %></td>
-        <td><%= property.description %></td>
-        <td><%= property.property_manager_id %></td>
+        <td><%= unit.unit_type %></td>
+        <td><%= number_to_currency(unit.rent) %></td>
+        <!-- <td><%= property.description %></td> -->
+        <td><%= property.property_manager.name %></td>
+        <td class="<%=leasing_now ? "lease_available" : "lease_unavailable"%>"><%= leasing_now ? "Yes" : "No" %></td>
 <!--        <td><%=l property.created_at %></td> -->
 <!--        <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
@@ -40,10 +48,9 @@
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
+<!--<%= link_to t('.new', :default => t("helpers.links.new")),
             new_property_path,
             :class => 'btn btn-primary' %>
 
-
 <%= gmaps4rails(@json) %>
-<%= @json %>
+<%= @json %> -->
