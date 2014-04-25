@@ -53,9 +53,10 @@
   <dd><%= @property.property_type %></dd>
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
   <dd><%= @property.description %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:property_manager_id) %>:</strong></dt>
-  <dd><%= @property.property_manager.name %></dd>
-
+  <dt><strong>Landlord</strong></dt>
+  <dd><%= @property.property_manager.name %> <br>
+  <%= @property.property_manager.phone_number %> <br>
+  <%= @property.property_manager.email %></dd>
   </div>
 
 </div>

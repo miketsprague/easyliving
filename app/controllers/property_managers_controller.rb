@@ -69,6 +69,6 @@ class PropertyManagersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def property_manager_params
-      params.require(:property_manager).permit(:name, :description)
+      params.require(:property_manager).permit(:name, :description, :email, :phone_number, :address)
     end
 end
