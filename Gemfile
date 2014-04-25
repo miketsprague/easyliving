@@ -41,7 +41,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem "twitter-bootstrap-rails"
+gem "twitter-bootstrap-rails", :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git', :branch => 'bootstrap3'
 
 gem 'gmaps4rails', '1.5.6'
 
