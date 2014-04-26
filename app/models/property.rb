@@ -1,5 +1,5 @@
 class Property < ActiveRecord::Base
-  belongs_to :property_manager
+  belongs_to :landlord
   acts_as_gmappable
 
 

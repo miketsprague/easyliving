@@ -1,0 +1,29 @@
+<h1>Listing landlords</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @landlords.each do |landlord| %>
+      <tr>
+        <td><%= landlord.name %></td>
+        <td><%= landlord.description %></td>
+        <td><%= link_to 'Show', landlord %></td>
+        <td><%= link_to 'Edit', edit_landlord_path(landlord) %></td>
+        <td><%= link_to 'Destroy', landlord, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Property manager', new_landlord_path %>

@@ -11,14 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140426014854) do
+ActiveRecord::Schema.define(version: 20140426020658) do
+
+  create_table "landlords", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "email"
+    t.string   "phone_number"
+    t.string   "address"
+  end
 
   create_table "properties", force: true do |t|
     t.string   "name"
     t.string   "address"
     t.string   "property_type"
     t.string   "description"
-    t.integer  "property_manager_id"
+    t.integer  "landlord_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.float    "latitude"
@@ -31,16 +41,6 @@ ActiveRecord::Schema.define(version: 20140426014854) do
     t.string   "image_urls"
   end
 
-  add_index "properties", ["property_manager_id"], name: "index_properties_on_property_manager_id"
-
-  create_table "property_managers", force: true do |t|
-    t.string   "name"
-    t.string   "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "email"
-    t.string   "phone_number"
-    t.string   "address"
-  end
+  add_index "properties", ["landlord_id"], name: "index_properties_on_landlord_id"
 
 end

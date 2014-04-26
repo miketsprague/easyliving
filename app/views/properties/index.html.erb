@@ -29,7 +29,7 @@
         <td><%= property.size_type %></td>
         <td><%= number_to_currency(property.rent) %></td>
         <!-- <td><%= property.description %></td> -->
-        <td><%= property.property_manager.name %></td>
+        <td><%= property.landlord.name %></td>
         <td class="<%=leasing_now ? "lease_available" : "lease_unavailable"%>"><%= leasing_now ? "Yes" : "No" %></td>
 <!--        <td><%=l property.created_at %></td> -->
 <!--        <td>

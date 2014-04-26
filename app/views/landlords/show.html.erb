@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @landlord.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @landlord.description %>
+</p>
+  <strong>Email:</strong>
+  <%= @landlord.email %>
+</p>
+  <strong>Phone Number:</strong>
+  <%= @landlord.phone_number %>
+</p>
+  <strong>Address:</strong>
+  <%= @landlord.address %>
+</p>
+
+<%= link_to 'Edit', edit_landlord_path(@landlord) %> |
+<%= link_to 'Back', landlords_path %>

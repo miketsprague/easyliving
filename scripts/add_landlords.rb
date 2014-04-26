@@ -27,6 +27,6 @@ CSV.foreach("landlords.csv") do |row|
     next
   end
 
-  landlord = PropertyManager.create( :name => row[name_index], :description => row[desc_index], :phone_number => row[number_index], :email => row[email_index], :address => row[address_index] );
+  landlord = Landlord.create( :name => row[name_index], :description => row[desc_index], :phone_number => row[number_index], :email => row[email_index], :address => row[address_index] );
   puts landlord
 end

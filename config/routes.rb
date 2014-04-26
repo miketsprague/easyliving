@@ -3,7 +3,7 @@ IvPoc::Application.routes.draw do
 
   resources :properties
 
-  resources :property_managers
+  resources :landlords
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -5,11 +5,11 @@ one:
   address: MyString
   type: 
   description: MyString
-  property_manager_id: 
+  landlord_id: 
 
 two:
   name: MyString
   address: MyString
   type: 
   description: MyString
-  property_manager_id: 
+  landlord_id: 
