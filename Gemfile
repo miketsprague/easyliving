@@ -45,6 +45,22 @@ gem "twitter-bootstrap-rails", :git => 'git://github.com/seyhunak/twitter-bootst
 
 gem 'gmaps4rails', '1.5.6'
 
+# Debugging
+gem 'better_errors'
+
+# Needed for above
+gem 'binding_of_caller'
+
+# Faster queries
+gem 'bullet' 
+
+#gem 'Debugger'
+
+# Pretty print the console
+gem 'hirb'
+
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
