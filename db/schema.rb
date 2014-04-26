@@ -13,8 +13,25 @@
 
 ActiveRecord::Schema.define(version: 20140426014854) do
 
-# Could not dump table "properties" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "properties", force: true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "property_type"
+    t.string   "description"
+    t.integer  "property_manager_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.boolean  "gmaps"
+    t.string   "size_type"
+    t.string   "rent"
+    t.string   "security_deposit"
+    t.date     "date_available"
+    t.string   "image_urls"
+  end
+
+  add_index "properties", ["property_manager_id"], name: "index_properties_on_property_manager_id"
 
   create_table "property_managers", force: true do |t|
     t.string   "name"
