@@ -7,9 +7,9 @@ class PropertyManagersController < ApplicationController
     @property_managers = PropertyManager.all
   end
 
-  def import(file)
-    PropertyManager.import(file)
-  end
+#  def import(file)
+#    PropertyManager.import(file)
+#  end
 
   # GET /property_managers/1
   # GET /property_managers/1.json
