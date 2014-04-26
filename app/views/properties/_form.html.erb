@@ -17,12 +17,41 @@
       <%= f.text_field :property_type, :class => 'text_field' %>
     </div>
   </div>
-  <div class="control-group">
+     <div class="control-group">
     <%= f.label :description, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :description, :class => 'text_field' %>
     </div>
   </div>
+ <div class="control-group">
+    <%= f.label :size_type, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :size_type, :class => 'text_field' %>
+    </div>
+  </div>
+ <div class="control-group">
+    <%= f.label :rent, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :rent, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="field">
+    <%= f.label :date_available %><br>
+    <%= f.date_select :date_available %>
+  </div>
+  <div class="control-group">
+    <%= f.label :security_deposit, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :security_deposit, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :image_urls, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :image_urls, :class => 'text_field' %>
+    </div>
+  </div>
+
   <div class="control-group">
     <%= f.label :property_manager_id, :class => 'control-label' %>
     <div class="controls">

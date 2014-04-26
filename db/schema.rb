@@ -11,22 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140425004105) do
+ActiveRecord::Schema.define(version: 20140426014854) do
 
-  create_table "properties", force: true do |t|
-    t.string   "name"
-    t.string   "address"
-    t.string   "property_type"
-    t.string   "description"
-    t.integer  "property_manager_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.boolean  "gmaps"
-  end
-
-  add_index "properties", ["property_manager_id"], name: "index_properties_on_property_manager_id"
+# Could not dump table "properties" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
   create_table "property_managers", force: true do |t|
     t.string   "name"
@@ -37,20 +25,5 @@ ActiveRecord::Schema.define(version: 20140425004105) do
     t.string   "phone_number"
     t.string   "address"
   end
-
-  create_table "units", force: true do |t|
-    t.string   "number"
-    t.string   "unit_type"
-    t.string   "rent"
-    t.date     "date_available"
-    t.string   "description"
-    t.string   "security_deposit"
-    t.integer  "property_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.boolean  "available",        default: true
-  end
-
-  add_index "units", ["property_id"], name: "index_units_on_property_id"
 
 end
