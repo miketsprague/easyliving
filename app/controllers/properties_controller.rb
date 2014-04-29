@@ -8,6 +8,10 @@ class PropertiesController < ApplicationController
     @json = @properties.to_gmaps4rails
   end
 
+  def load_from_csv(file)
+    Properties.load_from_csv(file)
+  end
+
   # GET /properties/1
   # GET /properties/1.json
   def show

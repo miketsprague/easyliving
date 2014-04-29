@@ -1,0 +1,2 @@
+id,address,property_type,description,size_type,rent,security_deposit,landlord_id,date_available,image_urls
+1,"6661 BERKSHIRE TERRACE, Isla Vista, CA",Apartment,test from spreadsheet,1 Bed / 1 Bath,1200,nil,1,"2014-04-14",nil
