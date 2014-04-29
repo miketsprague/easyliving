@@ -7,9 +7,9 @@ class LandlordsController < ApplicationController
     @landlords = Landlord.all
   end
 
-#  def import(file)
-#    Landlord.import(file)
-#  end
+  def load_from_csv(file)
+    Landlord.load_from_csv(file)
+  end
 
   # GET /landlords/1
   # GET /landlords/1.json
