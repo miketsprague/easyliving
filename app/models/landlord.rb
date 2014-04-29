@@ -1,5 +1,5 @@
 class Landlord < ActiveRecord::Base
-  require 'CSV'
+  require 'csv'
  
   def self.load_from_csv(file)
     CSV.foreach(file, headers: true) do |row|
