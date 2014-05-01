@@ -75,6 +75,9 @@ GEM
     multi_json (1.9.2)
     pg (0.15.1)
     polyglot (0.3.4)
+    postmark (1.2.0)
+      json
+      rake
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -143,7 +146,9 @@ DEPENDENCIES
   hirb
   jbuilder (= 1.0.2)
   jquery-rails (= 3.0.4)
+  mail
   pg (= 0.15.1)
+  postmark
   rails (= 4.0.4)
   rails_12factor (= 0.0.2)
   sass-rails (= 4.0.1)

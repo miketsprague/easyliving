@@ -59,7 +59,9 @@ gem 'bullet'
 # Pretty print the console
 gem 'hirb'
 
+gem 'mail'
 
+gem 'postmark'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
