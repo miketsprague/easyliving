@@ -1,5 +1,5 @@
 class PropertiesController < ApplicationController
-  before_action :set_property, only: [:show, :edit, :update, :destroy]
+  before_action :set_property, only: [:show, :edit, :update, :destroy, :apply]
 
   # GET /properties
   # GET /properties.json
@@ -10,6 +10,31 @@ class PropertiesController < ApplicationController
 
   def load_from_csv(file)
     Properties.load_from_csv(file)
+  end
+
+  # POST /properties/1/apply
+  def apply
+    property = Property.find(params[:id])
+
+    body_message =  "Hi " + property.landlord.name + "!\n" + (params[:first_name]) + " " + (params[:last_name]) + " is interested in leasing " + property.address + " from you!\n" + "You can contact them at " + (params[:email])
+    to = property.landlord.name + "<" + property.landlord.email + ">"
+    
+    message = Mail.new do
+      from            'mike@findivhousing.com'
+      to              to
+      subject         'Inquiry about ' + property.address + ' (via FindIVHousing.com)'
+      body           body_message 
+
+      delivery_method Mail::Postmark, :api_key =>'d73069ce-2eb9-402c-bca8-ecafb5e82124' #ENV['POSTMARK_API_KEY']
+    end
+
+    if message.deliver 
+      flash[:notice] = "Email sent"
+    else
+      flash[:notice] = "There was an issue sending the email"
+    end
+    redirect_to root_url
+    puts params
   end
 
   # GET /properties/1

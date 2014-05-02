@@ -31,6 +31,8 @@
             <br>
             <strong><%= model_class.human_attribute_name(:address) %>:</strong>
             <%= @property.address %>
+<br><br>
+        <%=  link_to_modal "One Click Application!", "#demo-form", :class=>"btn btn-default", :style=>"width:70%; background-color:rgba(235, 86, 53, 1.0); color:white;" %>
         </div>
   </div> <!-- end row -->
 <!--  <div class="row">
@@ -121,3 +123,25 @@ $('#street-text').click(function (e) {
 
 
 </script>
+
+
+
+<div id="demo-form" class="demo-description" style="display: none; width:20%; height:40%">
+<%= form_tag(property_path(@property) + "/apply", method: "post") do %>
+ <%= label_tag(:first_name, "First Name:") %>
+ <%= text_field_tag(:first_name) %>
+ <%= label_tag(:last_name, "Last Name:") %>
+ <%= text_field_tag(:last_name) %>
+ <%= label_tag(:email, "Email Address:") %>
+ <%= text_field_tag(:email) %>
+ <%= label_tag(:lease_start, "Ideal Lease Start Date:") %>
+ <%= text_field_tag(:lease_start) %>
+ <%= label_tag(:comments, "Have any questions or comments?") %>
+ <%= text_field_tag(:comments) %>
+<br>
+<br>
+ <%= submit_tag("Apply!", :class=>"btn btn-default", :style=>"width:70%; background-color:rgba(235, 86, 53, 1.0); color:white;") %>
+<% end %>
+
+</div>
+
