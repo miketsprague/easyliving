@@ -16,7 +16,4 @@
 
  @media screen and (max-width: 768px) {
          body { padding-top: 0px; }
- 
- a.close-modal {
-  background: image-url('close.png') no-repeat 0 0;   
- }
+} 
