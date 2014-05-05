@@ -17,7 +17,7 @@ class PropertiesController < ApplicationController
     property = Property.find(params[:id])
 
     body_message =  "Hi " + property.landlord.name + "!\n" + (params[:first_name]) + " " + (params[:last_name]) + " is interested in leasing " + property.address + " from you!\n" + "You can contact them at " + (params[:email])
-    to = property.landlord.name + "<" + property.landlord.email + ">"
+    to = property.landlord.name + "<" + property.landlord.email + ">; Mike <mike@findivhousing.com>; Dane <dane@findivhousing.com>"
     
     message = Mail.new do
       from            'mike@findivhousing.com'
@@ -25,7 +25,7 @@ class PropertiesController < ApplicationController
       subject         'Inquiry about ' + property.address + ' (via FindIVHousing.com)'
       body           body_message 
 
-      delivery_method Mail::Postmark, :api_key =>'d73069ce-2eb9-402c-bca8-ecafb5e82124' #ENV['POSTMARK_API_KEY']
+      delivery_method Mail::Postmark, :api_key => ENV['POSTMARK_API_KEY']
     end
 
     if message.deliver 
