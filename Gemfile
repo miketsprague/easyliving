@@ -63,8 +63,8 @@ gem 'mail'
 
 gem 'postmark'
 
-  gem 'jquery-ui-rails'
-  gem 'jquery-modal-rails'
+gem 'jquery-ui-rails'
+gem 'jquery-modal-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
