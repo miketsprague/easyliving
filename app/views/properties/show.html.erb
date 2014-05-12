@@ -26,11 +26,18 @@
   </div> <!-- end col-md-6 -->
 
         <div class="col-md-4"> 
-            <strong><%= model_class.human_attribute_name(:name) %>:</strong>
-            <%= @property.name %>
-            <br>
             <strong><%= model_class.human_attribute_name(:address) %>:</strong>
             <%= @property.address %>
+<br>
+            <strong><%= model_class.human_attribute_name(:property_type) %>:</strong>
+            <%= @property.property_type %>
+            <br>
+
+            <strong>Bed/Baths:</strong>
+            <%= @property.size_type %>
+<br>
+            <strong><%= model_class.human_attribute_name(:rent) %>:</strong>
+            <%= number_to_currency(@property.rent) %>
 <br><br>
         <%=  link_to_modal "One Click Application!", "#demo-form", :class=>"btn btn-default", :style=>"width:70%; background-color:rgba(235, 86, 53, 1.0); color:white;" %>
         </div>
