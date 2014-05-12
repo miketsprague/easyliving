@@ -1,8 +1,9 @@
 <%- model_class = Property -%>
-
+<% set_meta_tags :site => "Find IV Housing", :title => "Available Isla Vista Rental Properties" %>
+<% set_meta_tags :description => "A curated list of open apartments, houses, and other rental units in Isla Vista for UCSB, SBCC, and other students or tenats" %>
+<% set_meta_tags :keywords => %w[Isla Vista IV Housing Rentals Properties Units Find Search Available UCSB Santa Barbara Students Leasing List] %>
 
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
 <table class="table table-striped">
   <thead>

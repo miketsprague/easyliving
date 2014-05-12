@@ -14,6 +14,9 @@ IvPoc::Application.routes.draw do
 
   post 'properties/:id/apply' => 'properties#apply'
 
+
+  get '/page/index' => redirect('/page') 
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
