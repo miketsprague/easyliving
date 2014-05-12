@@ -15,6 +15,39 @@ class PropertiesController < ApplicationController
   # POST /properties/1/apply
   def apply
     property = Property.find(params[:id])
+    if params[:first_name].blank?
+      flash[:error] = "You must enter your first name"
+      redirect_to @property
+      return
+    end
+
+    if params[:last_name].blank?
+      flash[:error] = "You must enter your last name"
+      redirect_to @property
+      return
+    end
+
+    begin
+      m = Mail::Address.new(params[:email])
+      # We must check that value contains a domain and that value is an email address
+      r = m.domain && m.address == params[:email]
+      t = m.__send__(:tree)
+      # We need to dig into treetop
+      # A valid domain must have dot_atom_text elements size > 1
+      # user@localhost is excluded
+      # treetop must respond to domain
+      # We exclude valid email values like <user@localhost.com>
+      # Hence we use m.__send__(tree).domain
+      r &&= (t.domain.dot_atom_text.elements.size > 1)
+    rescue Exception => e   
+      r = false
+    end
+
+    if params[:email].blank? || !r
+      flash[:error] = "You must enter a valid email address"
+      redirect_to @property
+      return
+    end
 
     body_message =  "Hi " + property.landlord.name + "!\n" + (params[:first_name]) + " " + (params[:last_name]) + " is interested in leasing " + property.address + " from you!\n" + "You can contact them at " + (params[:email])
     to = property.landlord.name + "<" + property.landlord.email + ">; Mike <mike@findivhousing.com>; Dane <dane@findivhousing.com>"
@@ -34,7 +67,6 @@ class PropertiesController < ApplicationController
       flash[:notice] = "There was an issue sending the email"
     end
     redirect_to root_url
-    puts params
   end
 
   # GET /properties/1
