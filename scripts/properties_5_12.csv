@@ -1,0 +1,20 @@
+id,address,property_type,description,size_type,rent,security_deposit,landlord_id,date_available,image_urls
+1,"6661 BERKSHIRE TERRACE, Isla Vista, CA",Apartment,test from spreadsheet,1 Bed / 1 Bath,1200,nil,1,"""2015-04-14""",nil
+2,"6597 Trigo Road, Isla Vista, CA 93117",Apartments,"Located at the corner of TRIGO and CAMINO PESCADOR, this 10 unit apartment complex is centrally located just one block north of the beach, and one block west of grocery stores, banks, laundry, and restaurants in Isla Vista.",1 Bed / 1 Bath,,,2,"""2014-05-05""",nil
+3,"777 Embarcadero Del Mar, Isla Vista, CA 93117",Apartments,,2 Bed / 1 Bath,2200,900,3,"""2014-05-05""",nil
+4,"850 Camino Pescadero, Isla Vista, CA 93117",Apartments,,1 Bed / 1 Bath,1295,600,3,"""2014-05-05""",nil
+5,"820 Camino Corto, Isla Vista, CA 93117",Apartments,,2 Bed / 2 Bath,2400,2400,4,"""2014-05-05""",nil
+6,"850 Fortuna Lane, Goleta, CA 93117",House,,3 Bed / 2 Bath,4300,4300,5,"""2014-05-05""",nil
+7,"722 Embarcadero Del Norte, Isla Vista, CA 93117",Apartments,,2 Bed / 1 Bath,2400,2400,6,"""2014-05-05""",nil
+8,"6533 El Greco, Isla Vista, CA 93117",Apartments,,2 Bed / 2 Bath,2400,2500,7,"""2014-05-05""",nil
+9,"6665 Abrego, Isla Vista, CA 93117",Apartments,,1 Bed / 1 Bath,1350,1200,8,"""2014-05-05""",nil
+10,"6575 Trigo, Isla Vista, CA 93117",Apartments,,2 Bed /1 Bath,2150,3225,9,"""2014-05-05""",nil
+11,"910 Camino Pescadero, Isla Vista, CA 93117",Apartments,,1 Bed / 1 Bath,1525,1525,10,"""2014-05-05""",nil
+12,"6680 Sabado Tarde, Isla Vista, CA 93117",Apartments,The security depost includes the last month's rent,2 Bed / 1 Bath,2500,5000,11,"""2014-05-05""",nil
+13,"6565 Sabado Tarde, Isla Vista, CA 93117",Apartments,,2 Bed / 1.5 Bath,3150,3650,10,"""2014-05-05""",nil
+14,"6679 Abrego Road, Isla Vista, CA 93117",Apartments,,1 Bed / 1 Bath,1295,1795,10,"""2014-05-05""",nil
+15,"6597 Trigo Rd, Isla Vista, CA 93117",Apartments,,1 Bed / 1 Bath,1290,1340,12,"""2014-05-05""",nil
+16,"851 Camino Pescadero, Isla Vista, CA 93117",Apartments,,1 Bed / 1 Bath,1295,1795,10,"""2014-05-05""",nil
+17,"6511 Sabado Tarde, Isla Vista, CA 93117",Apartments,,2 Bed / 1 Bath,2390,2390,13,"""2014-05-05""",nil
+18,"6516 El Nido Lane, Isla vista, CA 93117",Apartments,,2 Bed / 2 Bath,2550,2550,13,"""2014-05-05""",nil
+19,"6511 Sabado Tarde, Isla Vista, CA 93117",Apartments,,1 Bed / 1 Bath,1290,1290,13,"""2014-05-05""",nil

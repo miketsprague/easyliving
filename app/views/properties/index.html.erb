@@ -21,27 +21,27 @@
     </tr>
   </thead>
   <tbody>
-    <% @properties.each do |property| 
+    <%
+     properties_order = []
+     first = []
+     last = []
+     @properties.order(:rent).each do |property|
+       if property.rent.to_f <= 0 || property.date_available.year != 2014
+         last << property
+       else
+         first << property
+       end
+     end
+     properties_order = first + last
+     properties_order.each do |property| 
      leasing_now = property.date_available.year == 2014 %>
       <tr>
-        <!-- <td><%= property.name %></td> -->
         <td><%= link_to property.address, property_path(property) %></td>
         <td><%= property.property_type %></td>
         <td><%= property.size_type %></td>
         <td><%= number_to_currency(property.rent) %></td>
-        <!-- <td><%= property.description %></td> -->
         <td><%= property.landlord.name %></td>
         <td class="<%=leasing_now ? "lease_available" : "lease_unavailable"%>"><%= leasing_now ? "Yes" : "No" %></td>
-<!--        <td><%=l property.created_at %></td> -->
-<!--        <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_property_path(property), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      property_path(property),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
-        </td> -->
       </tr>
     <% end %>
   </tbody>
