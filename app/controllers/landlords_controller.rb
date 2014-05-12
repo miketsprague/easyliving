@@ -1,5 +1,5 @@
 class LandlordsController < ApplicationController
-  before_action :set_landlord, only: [:show, :edit, :update, :destroy]
+#  before_action :set_landlord, only: [:show, :edit, :update, :destroy]
 
   # GET /landlords
   # GET /landlords.json
