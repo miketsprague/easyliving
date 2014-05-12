@@ -133,7 +133,7 @@ $('#street-text').click(function (e) {
 
 
 
-<div id="demo-form" class="demo-description" style="display: none; width:20%; height:40%">
+<div id="demo-form" class="demo-description" style="display: none; width:20%; height:40%; min-width:220px; min-height:400px">
 <%= form_tag(property_path(@property) + "/apply", method: "post") do %>
  <%= label_tag(:first_name, "First Name:") %>
  <%= text_field_tag(:first_name) %>
