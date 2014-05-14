@@ -17,6 +17,10 @@ class Property < ActiveRecord::Base
     end 
   end 
 
+  # DO NOT DO THIS XXX FIX IT
+  def is_available
+    date_available.year == 2014    
+  end
 
   def gmaps4rails_address
     address

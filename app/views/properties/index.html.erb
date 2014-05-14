@@ -34,14 +34,14 @@
      end
      properties_order = first + last
      properties_order.each do |property| 
-     leasing_now = property.date_available.year == 2014 %>
+     %>
       <tr>
         <td><%= link_to property.address, property_path(property) %></td>
         <td><%= property.property_type %></td>
         <td><%= property.size_type %></td>
         <td><%= number_to_currency(property.rent) %></td>
         <td><%= property.landlord.name %></td>
-        <td class="<%=leasing_now ? "lease_available" : "lease_unavailable"%>"><%= leasing_now ? "Yes" : "No" %></td>
+        <td class="<%=property.is_available ? "lease_available" : "lease_unavailable"%>"><%= property.is_available ? "Yes" : "No" %></td>
       </tr>
     <% end %>
   </tbody>

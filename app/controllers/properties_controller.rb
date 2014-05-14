@@ -8,6 +8,60 @@ class PropertiesController < ApplicationController
     @json = @properties.to_gmaps4rails
   end
 
+  # GET /properties/1
+  # GET /properties/1.json
+  def show
+  end
+
+  # GET /properties/new
+  def new
+    @property = Property.new
+  end
+
+  # GET /properties/1/edit
+  def edit
+  end
+
+  # POST /properties
+  # POST /properties.json
+  def create
+    @property = Property.new(property_params)
+
+    respond_to do |format|
+      if @property.save
+        format.html { redirect_to @property, notice: 'Property was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @property }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @property.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PATCH/PUT /properties/1
+  # PATCH/PUT /properties/1.json
+  def update
+    respond_to do |format|
+      if @property.update(property_params)
+        format.html { redirect_to @property, notice: 'Property was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: 'edit' }
+        format.json { render json: @property.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /properties/1
+  # DELETE /properties/1.json
+  def destroy
+    @property.destroy
+    respond_to do |format|
+      format.html { redirect_to properties_url }
+      format.json { head :no_content }
+    end
+  end
+
   def load_from_csv(file)
     Properties.load_from_csv(file)
   end
@@ -67,60 +121,6 @@ class PropertiesController < ApplicationController
       flash[:notice] = "There was an issue sending the email"
     end
     redirect_to root_url
-  end
-
-  # GET /properties/1
-  # GET /properties/1.json
-  def show
-  end
-
-  # GET /properties/new
-  def new
-    @property = Property.new
-  end
-
-  # GET /properties/1/edit
-  def edit
-  end
-
-  # POST /properties
-  # POST /properties.json
-  def create
-    @property = Property.new(property_params)
-
-    respond_to do |format|
-      if @property.save
-        format.html { redirect_to @property, notice: 'Property was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @property }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @property.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /properties/1
-  # PATCH/PUT /properties/1.json
-  def update
-    respond_to do |format|
-      if @property.update(property_params)
-        format.html { redirect_to @property, notice: 'Property was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @property.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /properties/1
-  # DELETE /properties/1.json
-  def destroy
-    @property.destroy
-    respond_to do |format|
-      format.html { redirect_to properties_url }
-      format.json { head :no_content }
-    end
   end
 
   private
