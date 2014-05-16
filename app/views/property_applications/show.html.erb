@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @property_application.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @property_application.last_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @property_application.email %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @property_application.start_date %>
+</p>
+
+<p>
+  <strong>Number of cotenants:</strong>
+  <%= @property_application.number_of_cotenants %>
+</p>
+
+<p>
+  <strong>Attends a school:</strong>
+  <%= @property_application.attends_a_school %>
+</p>
+
+<p>
+  <strong>School:</strong>
+  <%= @property_application.school %>
+</p>
+
+<p>
+  <strong>Planned graduation date:</strong>
+  <%= @property_application.planned_graduation_date %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @property_application.phone_number %>
+</p>
+
+<p>
+  <strong>Property:</strong>
+  <%= @property_application.property_id %>
+</p>
+
+<%= link_to 'Edit', edit_property_application_path(@property_application) %> |
+<%= link_to 'Back', property_applications_path %>

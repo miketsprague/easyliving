@@ -1,0 +1,73 @@
+<%= form_for(@property_application) do |f| %>
+  <% if @property_application.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@property_application.errors.count, "error") %> prohibited this property_application from being saved:</h2>
+
+      <ul>
+      <% @property_application.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p class="lead">Application</p>
+  <small>Filling this out will help us determine if this landlord is a good fit for you.</small>
+  <br> 
+
+  <br> 
+  <div class="form-group">
+    <%= f.text_field :first_name, placeholder: "First Name", class: "form-control input-sm" %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :last_name, placeholder: "Last Name" , class: "form-control input-sm"%>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :email, placeholder: "Email", class: "form-control input-sm" %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :phone_number, placeholder: "(805) 555-5555", class: "form-control input-sm" %>
+  </div>
+
+<br>
+
+  <div class="field">
+    <%= f.label "Desired Lease Start Date" %><br>
+    <%= f.date_select :start_date %>
+  </div>
+
+<br>
+
+  <div class="field">
+    <%= f.label "How many other people do you plan to live with?" %><br>
+    <%= f.number_field :number_of_cotenants, placeholder: "0 (just you?)", class: "form-control input-sm" %>
+  </div>
+
+<br>
+
+  <div class="field">
+   <b>Are you a student?</b> <%= f.check_box :attends_a_school%> 
+  </div>
+
+  <div class="field">
+    <%= f.text_field :school, placeholder: "If so, which school? (UCSB, SBCC, etc)", class: "form-control input-sm" %>
+  </div>
+
+<br>
+
+  <div class="field">
+    <%= f.label "When do you think you'll graduate?" %><br>
+    <%= f.date_select :planned_graduation_date , class: "form-control input-sm"%>
+  </div>
+
+<br>
+
+  <%= f.hidden_field :property_id, value: @property_application.property_id %>
+
+  <div class="actions">
+   <!-- Gross hacky css shit -->
+    <%= f.submit "Let's Go!", :class=>"btn btn-default", :style=>"background-color:rgba(235, 86, 53, 1.0); color:white; width:80%; margin-left:8%" %>
+  </div>
+<% end %>

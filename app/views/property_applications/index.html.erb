@@ -1,0 +1,45 @@
+<h1>Listing property_applications</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Email</th>
+      <th>Start date</th>
+      <th>Number of cotenants</th>
+      <th>Attends a school</th>
+      <th>School</th>
+      <th>Planned graduation date</th>
+      <th>Phone number</th>
+      <th>Property</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @property_applications.each do |property_application| %>
+      <tr>
+        <td><%= property_application.first_name %></td>
+        <td><%= property_application.last_name %></td>
+        <td><%= property_application.email %></td>
+        <td><%= property_application.start_date %></td>
+        <td><%= property_application.number_of_cotenants %></td>
+        <td><%= property_application.attends_a_school %></td>
+        <td><%= property_application.school %></td>
+        <td><%= property_application.planned_graduation_date %></td>
+        <td><%= property_application.phone_number %></td>
+        <td><%= property_application.property_id %></td>
+        <td><%= link_to 'Show', property_application %></td>
+        <td><%= link_to 'Edit', edit_property_application_path(property_application) %></td>
+        <td><%= link_to 'Destroy', property_application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Property application', new_property_application_path %>

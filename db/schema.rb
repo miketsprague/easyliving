@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140426020658) do
+ActiveRecord::Schema.define(version: 20140516015520) do
 
   create_table "landlords", force: true do |t|
     t.string   "name"
@@ -42,5 +42,20 @@ ActiveRecord::Schema.define(version: 20140426020658) do
   end
 
   add_index "properties", ["landlord_id"], name: "index_properties_on_landlord_id"
+
+  create_table "property_applications", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.date     "start_date"
+    t.integer  "number_of_cotenants"
+    t.boolean  "attends_a_school"
+    t.string   "school"
+    t.date     "planned_graduation_date"
+    t.string   "phone_number"
+    t.integer  "property_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

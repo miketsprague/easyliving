@@ -138,8 +138,14 @@ $('#street-text').click(function (e) {
 
 
 
-<div id="demo-form" class="demo-description" style="display: none; width:20%; height:40%; min-width:220px; min-height:400px">
-<%= form_tag(property_path(@property) + "/apply", method: "post") do %>
+<div id="demo-form" class="demo-description" style="display: none; width:20%; height:40%; min-width:220px; min-height:400px; overflow-y:scroll;">
+  <%
+    @property_application = PropertyApplication.new;
+    @property_application.property = @property;
+  %>
+  <%= render partial: 'property_applications/property_application_form', :object => @property_application %>
+</div>
+<!-- <%= form_tag(property_path(@property) + "/apply", method: "post") do %>
  <%= label_tag(:first_name, "First Name:") %>
  <%= text_field_tag(:first_name) %>
  <%= label_tag(:last_name, "Last Name:") %>
@@ -153,7 +159,6 @@ $('#street-text').click(function (e) {
 <br>
 <br>
  <%= submit_tag("Apply!", :class=>"btn btn-default", :style=>"width:70%; background-color:rgba(235, 86, 53, 1.0); color:white;") %>
-<% end %>
+<% end %> -->
 
-</div>
 
